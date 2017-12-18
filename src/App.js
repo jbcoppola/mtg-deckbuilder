@@ -6,16 +6,22 @@ import axios from 'axios';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      cardList: []
+    }
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
     let url = 'https://api.magicthegathering.io/v1/cards';
     var form = new FormData(event.target);
 
     return axios.get(url, form)
-      .then(function (response) {
+      .then((response) => {
         console.log(response.data);
+        this.setState({
+          cardList: response.data
+        })
       })
       .catch(function (error) {
         console.log(error);
