@@ -31,7 +31,7 @@
   font-size: large;
 }
 
-.Search-form {
+.search-form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -86,9 +86,4 @@
       background-color: black;
     }
   }
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

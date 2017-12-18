@@ -24,35 +24,35 @@
 .App-intro {
   font-size: large; }
 
-.Search-form {
+.search-form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
   padding: 30px; }
-  .Search-form p:first-of-type {
+  .search-form p:first-of-type {
     width: 200px;
     border-radius: 6px;
     padding: 10px;
     background-color: lightblue;
     margin: 0; }
-  .Search-form div {
+  .search-form div {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     font-size: 18px;
     margin: 5px; }
-    .Search-form div .seperator {
+    .search-form div .seperator {
       font-size: 26px;
       padding-left: 15px;
       margin: 0; }
-    .Search-form div input {
+    .search-form div input {
       font-size: 18px;
       padding: 5px;
       max-width: 500px;
       margin-left: 15px; }
-  .Search-form button {
+  .search-form button {
     width: 150px;
     padding: 15px;
     font-size: 24px;
@@ -64,13 +64,7 @@
     align-self: center;
     cursor: pointer;
     margin-top: 20px; }
-    .Search-form button:hover {
+    .search-form button:hover {
       background-color: #222; }
-    .Search-form button:active {
+    .search-form button:active {
       background-color: black; }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }

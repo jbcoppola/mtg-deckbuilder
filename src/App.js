@@ -1,8 +1,27 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    let url = 'https://api.magicthegathering.io/v1/cards';
+    var form = new FormData(event.target);
+
+    return axios.get(url, form)
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
   render() {
     return (
       <div className="App">
@@ -16,7 +35,7 @@ class App extends Component {
         <p className="App-intro">
           Pick parameters for cards and click "View Cards" button to return a list of cards. Select from results to add to deck.
         </p>
-        <form className="Search-form">
+        <form className="search-form" onSubmit={this.handleSubmit}>
           <div>
             <p>Name</p>
             <input name='name' type='text' placeholder='Name' /></div>
@@ -83,10 +102,10 @@ class App extends Component {
             <input name='id' type='text' placeholder='Unique ID' />
           </div>
           <div>
-            <p>Results to display (max/default 100)</p>
+            <p>Results to display (max / default 100)</p>
             <input name='pageSize' type='text' placeholder='Results size' />
           </div>
-          <button type='Submit's>Search</button>
+          <button type='Submit'>Search</button>
         </form>
       </div>
     );
