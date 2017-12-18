@@ -86,6 +86,7 @@ class App extends Component {
             <p>Results to display (max/default 100)</p>
             <input name='pageSize' type='text' placeholder='Results size' />
           </div>
+          <button type='Submit's>Search</button>
         </form>
       </div>
     );

@@ -65,6 +65,27 @@
       margin-left: 15px;
     }
   }
+
+  button {
+    width: 150px;
+    padding: 15px;
+    font-size: 24px;
+    color: white;
+    background-color: gray;
+    border: none;
+    border-radius: 6px;
+    text-transform: uppercase;
+    align-self: center;
+    cursor: pointer;
+    margin-top: 20px;
+
+    &:hover {
+      background-color: #222;
+    }
+    &:active {
+      background-color: black;
+    }
+  }
 }
 
 @keyframes App-logo-spin {

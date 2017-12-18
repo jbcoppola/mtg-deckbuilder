@@ -52,6 +52,22 @@
       padding: 5px;
       max-width: 500px;
       margin-left: 15px; }
+  .Search-form button {
+    width: 150px;
+    padding: 15px;
+    font-size: 24px;
+    color: white;
+    background-color: gray;
+    border: none;
+    border-radius: 6px;
+    text-transform: uppercase;
+    align-self: center;
+    cursor: pointer;
+    margin-top: 20px; }
+    .Search-form button:hover {
+      background-color: #222; }
+    .Search-form button:active {
+      background-color: black; }
 
 @keyframes App-logo-spin {
   from {
