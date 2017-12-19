@@ -9,7 +9,7 @@ class CardList extends Component {
             <div className="results-heading">
               <h3 className="panel-title">Matching Cards</h3>
             </div>
-            <div className="results-body">
+            <div className="card-list">
               { this.props.cardList.map((card) => <Card name={card.name} text={card.text} key={card.id} /> )}
             </div>
           </div>

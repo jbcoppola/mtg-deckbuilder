@@ -68,3 +68,15 @@
       background-color: #222; }
     .search-form button:active {
       background-color: black; }
+
+.card-list {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap; }
+  .card-list .card {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    width: 300px;
+    height: 400px;
+    margin: 5px; }
