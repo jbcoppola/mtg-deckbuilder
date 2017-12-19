@@ -10,7 +10,7 @@ class CardList extends Component {
               <h3 className="panel-title">Matching Cards</h3>
             </div>
             <div className="card-list">
-              { this.props.cardList.map((card) => <Card name={card.name} text={card.text} key={card.id} /> )}
+              { this.props.cardList.map((card) => <Card card={card}/> )}
             </div>
           </div>
       );
