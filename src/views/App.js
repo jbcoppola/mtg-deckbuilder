@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '../App.css';
+import CardList from './card-list';
 import axios from 'axios';
 
 class App extends Component {
@@ -20,7 +20,7 @@ class App extends Component {
       .then((response) => {
         console.log(response.data);
         this.setState({
-          cardList: response.data
+          cardList: response.data.cards
         })
       })
       .catch(function (error) {
@@ -113,6 +113,9 @@ class App extends Component {
           </div>
           <button type='Submit'>Search</button>
         </form>
+        <div className="search-results">
+            <CardList cardList={this.state.cardList} />
+        </div>
       </div>
     );
   }
