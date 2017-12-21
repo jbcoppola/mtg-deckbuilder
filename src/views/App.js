@@ -7,18 +7,24 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: '',
       cardList: []
     }
+  }
+
+  handleChange = (event) => {
+    this.setState({[event.target.name]: event.target.value});
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
     let url = 'https://api.magicthegathering.io/v1/cards';
     var form = new FormData(event.target);
-
+    for (var pair of form.entries()) {
+      console.log(pair[0]+ ', ' + pair[1]); 
+    }
     return axios.get(url, form)
       .then((response) => {
-        console.log(response.data);
         this.setState({
           cardList: response.data.cards
         })
@@ -44,7 +50,7 @@ class App extends Component {
         <form className="search-form" onSubmit={this.handleSubmit}>
           <div>
             <p>Name</p>
-            <input name='name' type='text' placeholder='Name' /></div>
+            <input name='name' type='text' placeholder='Name' onChange = {this.handleChange} /></div>
           <div>
             <p>Layout</p>
             <input name='layout' type='text' placeholder='Layout' /></div>
