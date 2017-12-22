@@ -23,7 +23,13 @@ class App extends Component {
     for (var pair of form.entries()) {
       console.log(pair[0]+ ', ' + pair[1]); 
     }
-    return axios.get(url, form)
+    return axios({
+      request: 'get',
+      url: url,
+      params: {
+        name: this.state.name
+      }
+    })
       .then((response) => {
         this.setState({
           cardList: response.data.cards
@@ -50,13 +56,12 @@ class App extends Component {
         <form className="search-form" onSubmit={this.handleSubmit}>
           <div>
             <p>Name</p>
-            <input name='name' type='text' placeholder='Name' onChange = {this.handleChange} /></div>
-          <div>
-            <p>Layout</p>
-            <input name='layout' type='text' placeholder='Layout' /></div>
+            <input name='name' type='text' placeholder='Name' value={this.state.name} onChange = {this.handleChange} />
+          </div>
           <div>
             <p>Converted mana cost</p>
-            <input name='cmc' type='text' placeholder='CMC' /></div>
+            <input name='cmc' type='text' placeholder='CMC' />
+          </div>
           <div>
             <p>Colors</p> 
             <input name='color1' type='text' placeholder='Color 1' />
@@ -85,7 +90,7 @@ class App extends Component {
           </div>
           <div>
             <p>Rarity</p>
-            <input name='rarity' type='text' placeholder='Rarity'></input>
+            <input name='rarity' type='text' placeholder='Rarity' />
           </div>
           <div>
             <p>Set Name</p>
