@@ -47,7 +47,7 @@
       font-size: 26px;
       padding-left: 15px;
       margin: 0; }
-    .search-form div input {
+    .search-form div input, .search-form div select {
       font-size: 18px;
       padding: 5px;
       max-width: 500px;

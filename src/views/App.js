@@ -8,6 +8,8 @@ class App extends Component {
     super(props);
     this.state = {
       name: '',
+      type: '',
+      color: [],
       cardList: []
     }
   }
@@ -64,13 +66,37 @@ class App extends Component {
           </div>
           <div>
             <p>Colors</p> 
-            <input name='color1' type='text' placeholder='Color 1' />
-            <input name='color2' type='text' placeholder='Color 2' />
-            <input name='color3' type='text' placeholder='Color 3' />
+            <select name="color1" value={this.state.color[0]} onChange={this.handleChange}>
+              <option value="" disabled selected hidden>Color 1</option>
+              <option value="" >Unknown</option>
+              <option value="Green">Green</option>
+              <option value="Blue">Blue</option>
+              <option value="Red">Red</option>
+              <option value="White">White</option>
+              <option value="Black">Black</option>
+            </select> 
+            <select name="color2" value={this.state.color[1]} onChange={this.handleChange}>
+              <option value="" disabled selected hidden>Color 2</option>
+              <option value="" >Unknown</option>
+              <option value="Green">Green</option>
+              <option value="Blue">Blue</option>
+              <option value="Red">Red</option>
+              <option value="White">White</option>
+              <option value="Black">Black</option>
+            </select> 
+            <select name="color3" value={this.state.color[2]} onChange={this.handleChange}>
+              <option value="" disabled selected hidden>Color 3</option>
+              <option value="" >Unknown</option>
+              <option value="Green">Green</option>
+              <option value="Blue">Blue</option>
+              <option value="Red">Red</option>
+              <option value="White">White</option>
+              <option value="Black">Black</option>
+            </select> 
           </div>
           <div>
             <p>Type</p>
-            <input name='type' type='text' placeholder='Type' />
+            <input name='type' type='text' placeholder='Type' value={this.state.type} onChange = {this.handleChange}/>
           </div>
           <div>
             <p>Supertypes</p>
@@ -102,9 +128,9 @@ class App extends Component {
           </div>
           <div>
             <p>Power / Toughness</p>
-            <input name='power' type='text' placeholder='Power' />
+            <input name='power' type='number' placeholder='Power' />
             <p className='seperator'>/</p>
-            <input name='toughness' type='text' placeholder='Toughness' />
+            <input name='toughness' type='number' placeholder='Toughness' />
           </div>
           <div>
             <p>Language</p>
