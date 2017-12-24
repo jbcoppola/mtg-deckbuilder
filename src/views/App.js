@@ -10,6 +10,7 @@ class App extends Component {
       name: '',
       type: '',
       color: [],
+      supertype: [],
       cardList: []
     }
   }
@@ -100,8 +101,8 @@ class App extends Component {
           </div>
           <div>
             <p>Supertypes</p>
-            <input name='supertype1' type='text' placeholder='Supertype 1'/>
-            <input name='supertype2' type='text' placeholder='Supertype 2'/>
+            <input name='supertype1' type='text' placeholder='Supertype 1' value={this.state.supertype[0]} onChange={this.handleChange} />
+            <input name='supertype2' type='text' placeholder='Supertype 2' value={this.state.supertype[1]} onChange={this.handleChange} />
           </div>
           <div>
             <p>Types</p>
