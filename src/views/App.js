@@ -9,9 +9,12 @@ class App extends Component {
     this.state = {
       name: '',
       type: '',
+      power: '',
+      toughness: '',
       color: [],
       supertype: [],
       types: [],
+      subtype: [],
       cardList: []
     }
   }
@@ -31,7 +34,14 @@ class App extends Component {
       request: 'get',
       url: url,
       params: {
-        name: this.state.name
+        name: this.state.name,
+        type: this.state.type,
+        power: this.state.power,
+        toughness: this.state.toughness,
+        color: this.state.color,
+        supertype: this.state.supertype,
+        types: this.state.types,
+        subtype: this.state.subtype,
       }
     })
       .then((response) => {
@@ -112,9 +122,9 @@ class App extends Component {
           </div>
           <div>
             <p>Subtypes</p>
-            <input name='subtype1' type='text' placeholder='Subtype 1' />
-            <input name='subtype2' type='text' placeholder='Subtype 2' />
-            <input name='subtype3' type='text' placeholder='Subtype 3' />
+            <input name='subtype1' type='text' placeholder='Subtype 1' value={this.state.subtype[0]} onChange={this.handleChange} />
+            <input name='subtype2' type='text' placeholder='Subtype 2' value={this.state.subtype[1]} onChange={this.handleChange} />
+            <input name='subtype3' type='text' placeholder='Subtype 3' value={this.state.subtype[2]} onChange={this.handleChange} />
           </div>
           <div>
             <p>Rarity</p>
@@ -130,9 +140,9 @@ class App extends Component {
           </div>
           <div>
             <p>Power / Toughness</p>
-            <input name='power' type='number' placeholder='Power' />
+            <input name='power' type='text' placeholder='Power' value={this.state.power} onChange = {this.handleChange} />
             <p className='seperator'>/</p>
-            <input name='toughness' type='number' placeholder='Toughness' />
+            <input name='toughness' type='text' placeholder='Toughness' value={this.state.toughness} onChange = {this.handleChange} />
           </div>
           <div>
             <p>Language</p>
