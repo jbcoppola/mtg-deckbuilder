@@ -11,6 +11,7 @@ class App extends Component {
       type: '',
       power: '',
       toughness: '',
+      language: '',
       color: [],
       supertype: [],
       types: [],
@@ -38,6 +39,7 @@ class App extends Component {
         type: this.state.type,
         power: this.state.power,
         toughness: this.state.toughness,
+        language: this.state.langugage,
         color: this.state.color,
         supertype: this.state.supertype,
         types: this.state.types,
@@ -146,7 +148,7 @@ class App extends Component {
           </div>
           <div>
             <p>Language</p>
-            <input name='language' type='text' placeholder='Language' />
+            <input name='language' type='text' placeholder='Language' value={this.state.language} onChange = {this.handleChange} />
           </div>
           <div>
             <p>Order by</p>
