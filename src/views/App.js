@@ -16,6 +16,7 @@ class App extends Component {
       supertype: [],
       types: [],
       subtype: [],
+      id: '',
       cardList: []
     }
   }
@@ -44,6 +45,7 @@ class App extends Component {
         supertype: this.state.supertype,
         types: this.state.types,
         subtype: this.state.subtype,
+        id: this.state.id
       }
     })
       .then((response) => {
@@ -156,7 +158,7 @@ class App extends Component {
           </div>
           <div>
             <p>Id</p>
-            <input name='id' type='text' placeholder='Unique ID' />
+            <input name='id' type='text' placeholder='Unique ID' value={this.state.id} onChange = {this.handleChange} />
           </div>
           <div>
             <p>Results to display (max / default 100)</p>
