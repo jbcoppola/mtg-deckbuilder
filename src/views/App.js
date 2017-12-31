@@ -12,6 +12,7 @@ class App extends Component {
       power: '',
       toughness: '',
       language: '',
+      orderBy: '',
       color: [],
       supertype: [],
       types: [],
@@ -45,7 +46,8 @@ class App extends Component {
         supertype: this.state.supertype,
         types: this.state.types,
         subtype: this.state.subtype,
-        id: this.state.id
+        id: this.state.id,
+        orderBy: this.state.orderBy
       }
     })
       .then((response) => {
