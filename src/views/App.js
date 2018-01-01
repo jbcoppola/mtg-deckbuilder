@@ -134,7 +134,7 @@ class App extends Component {
           </div>
           <div>
             <p>Rarity</p>
-            <input name='rarity' type='text' placeholder='Rarity' />
+            <input name='rarity' type='text' placeholder='Rarity' value={this.state.rarity} onChange = {this.handleChange} />
           </div>
           <div>
             <p>Set Name</p>
