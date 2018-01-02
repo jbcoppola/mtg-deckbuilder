@@ -44,6 +44,7 @@ class App extends Component {
         language: this.state.langugage,
         color: this.state.color,
         supertype: this.state.supertype,
+        orderBy: this.state.orderBy,
         types: this.state.types,
         subtype: this.state.subtype,
         id: this.state.id,
