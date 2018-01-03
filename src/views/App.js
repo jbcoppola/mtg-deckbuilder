@@ -13,10 +13,15 @@ class App extends Component {
       toughness: '',
       language: '',
       orderBy: '',
+      supertype1: '',
+      supertype2: '',
+      types1: '',
+      types2: '',
+      subtype1: '',
+      subtype2: '',
+      subtype3: '',
+      setName: '',
       color: [],
-      supertype: [],
-      types: [],
-      subtype: [],
       id: '',
       cardList: []
     }
@@ -41,9 +46,11 @@ class App extends Component {
         type: this.state.type,
         power: this.state.power,
         toughness: this.state.toughness,
+        types: this.state.types,
         language: this.state.langugage,
         color: this.state.color,
         supertype: this.state.supertype,
+        setName: this.state.setName,
         orderBy: this.state.orderBy,
         types: this.state.types,
         subtype: this.state.subtype,
@@ -119,19 +126,19 @@ class App extends Component {
           </div>
           <div>
             <p>Supertypes</p>
-            <input name='supertype1' type='text' placeholder='Supertype 1' value={this.state.supertype[0]} onChange={this.handleChange} />
-            <input name='supertype2' type='text' placeholder='Supertype 2' value={this.state.supertype[1]} onChange={this.handleChange} />
+            <input name='supertype1' type='text' placeholder='Supertype 1' value={this.state.supertype1} onChange={this.handleChange} />
+            <input name='supertype2' type='text' placeholder='Supertype 2' value={this.state.supertype2} onChange={this.handleChange} />
           </div>
           <div>
             <p>Types</p>
-            <input name='types1' type='text' placeholder='Type 1' value={this.state.types[0]} onChange={this.handleChange} />
-            <input name='types2' type='text' placeholder='Type 2' value={this.state.types[1]} onChange={this.handleChange} />
+            <input name='types1' type='text' placeholder='Type 1' value={this.state.types1} onChange={this.handleChange} />
+            <input name='types2' type='text' placeholder='Type 2' value={this.state.types2} onChange={this.handleChange} />
           </div>
           <div>
             <p>Subtypes</p>
-            <input name='subtype1' type='text' placeholder='Subtype 1' value={this.state.subtype[0]} onChange={this.handleChange} />
-            <input name='subtype2' type='text' placeholder='Subtype 2' value={this.state.subtype[1]} onChange={this.handleChange} />
-            <input name='subtype3' type='text' placeholder='Subtype 3' value={this.state.subtype[2]} onChange={this.handleChange} />
+            <input name='subtype1' type='text' placeholder='Subtype 1' value={this.state.subtype1} onChange={this.handleChange} />
+            <input name='subtype2' type='text' placeholder='Subtype 2' value={this.state.subtype2} onChange={this.handleChange} />
+            <input name='subtype3' type='text' placeholder='Subtype 3' value={this.state.subtype3} onChange={this.handleChange} />
           </div>
           <div>
             <p>Rarity</p>
@@ -139,7 +146,7 @@ class App extends Component {
           </div>
           <div>
             <p>Set Name</p>
-            <input name='setName' type='text' placeholder='Set Name' />
+            <input name='setName' type='text' placeholder='Set Name' value={this.state.setName} onChange = {this.handleChange} />
           </div>
           <div>
             <p>Number</p>
