@@ -157,7 +157,7 @@ class App extends Component {
           </div>
           <div>
             <p>Order by</p>
-            <input name='orderBy' type='text' placeholder='Order By' value={this.state.orderBy} onChange = {this.handleChange} />
+            <input name='orderBy' type='text' placeholder='Order By' value={this.state.orderBy} onChange = {this.handleChange}/>
           </div>
           <div>
             <p>Id</p>
