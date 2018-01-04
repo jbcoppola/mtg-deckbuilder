@@ -21,7 +21,10 @@ class App extends Component {
       subtype2: '',
       subtype3: '',
       setName: '',
-      color: [],
+      number: '',
+      color1: '',
+      color2: '',
+      color3: '',
       id: '',
       cardList: []
     }
@@ -38,6 +41,12 @@ class App extends Component {
     for (var pair of form.entries()) {
       console.log(pair[0]+ ', ' + pair[1]); 
     }
+
+    var types = [this.state.types1, this.state.types2];
+    var supertype = [this.state.supertype1, this.state.supertype2];
+    var subtype = [this.state.subtype1, this.state.subtype2, this.state.subtype3];
+    var color = [this.state.color1, this.state.color2, this.state.color3];
+
     return axios({
       request: 'get',
       url: url,
@@ -48,12 +57,12 @@ class App extends Component {
         toughness: this.state.toughness,
         types: this.state.types,
         language: this.state.langugage,
-        color: this.state.color,
-        supertype: this.state.supertype,
+        color: color,
+        supertype: supertype,
         setName: this.state.setName,
         orderBy: this.state.orderBy,
-        types: this.state.types,
-        subtype: this.state.subtype,
+        types: types,
+        subtype: subtype,
         id: this.state.id,
         orderBy: this.state.orderBy
       }
@@ -92,7 +101,7 @@ class App extends Component {
           </div>
           <div>
             <p>Colors</p> 
-            <select name="color1" value={this.state.color[0]} onChange={this.handleChange}>
+            <select name="color1" value={this.state.color1} onChange={this.handleChange}>
               <option value="" disabled selected hidden>Color 1</option>
               <option value="" >Unknown</option>
               <option value="Green">Green</option>
@@ -101,7 +110,7 @@ class App extends Component {
               <option value="White">White</option>
               <option value="Black">Black</option>
             </select> 
-            <select name="color2" value={this.state.color[1]} onChange={this.handleChange}>
+            <select name="color2" value={this.state.color2} onChange={this.handleChange}>
               <option value="" disabled selected hidden>Color 2</option>
               <option value="" >Unknown</option>
               <option value="Green">Green</option>
@@ -110,7 +119,7 @@ class App extends Component {
               <option value="White">White</option>
               <option value="Black">Black</option>
             </select> 
-            <select name="color3" value={this.state.color[2]} onChange={this.handleChange}>
+            <select name="color3" value={this.state.color3} onChange={this.handleChange}>
               <option value="" disabled selected hidden>Color 3</option>
               <option value="" >Unknown</option>
               <option value="Green">Green</option>
@@ -150,7 +159,7 @@ class App extends Component {
           </div>
           <div>
             <p>Number</p>
-            <input name='number' type='text' placeholder='Number' />
+            <input name='number' type='text' placeholder='Number' value={this.state.number} onChange = {this.handleChange} />
           </div>
           <div>
             <p>Power / Toughness</p>
