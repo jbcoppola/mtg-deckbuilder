@@ -56,9 +56,9 @@ class App extends Component {
     }
 
     var types = [this.state.types1, this.state.types2];
-    var supertype = [this.state.supertype1, this.state.supertype2];
-    var subtype = [this.state.subtype1, this.state.subtype2, this.state.subtype3];
-    var color = [this.state.color1, this.state.color2, this.state.color3];
+    var supertypes = [this.state.supertype1, this.state.supertype2];
+    var subtypes = [this.state.subtype1, this.state.subtype2, this.state.subtype3];
+    var colors = [this.state.color1, this.state.color2, this.state.color3];
 
     return axios({
       request: 'get',
@@ -68,15 +68,15 @@ class App extends Component {
         type: this.state.type,
         power: this.state.power,
         toughness: this.state.toughness,
-        types: this.listArray(types),
         language: this.state.langugage,
-        colors: this.listArray(color),
-        supertypes: this.listArray(supertype),
         setName: this.state.setName,
         orderBy: this.state.orderBy,
-        subtypes: this.listArray(subtype),
         id: this.state.id,
-        orderBy: this.state.orderBy
+        orderBy: this.state.orderBy,
+        types: this.listArray(types),
+        colors: this.listArray(colors),
+        supertypes: this.listArray(supertypes),
+        subtypes: this.listArray(subtypes)
       }
     })
       .then((response) => {
