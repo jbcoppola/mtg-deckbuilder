@@ -34,6 +34,19 @@ class App extends Component {
     this.setState({[event.target.name]: event.target.value});
   }
 
+  listArray(array) {
+    let str = '';
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] !== '') { 
+        str += array[i]; 
+      }
+      if (array[i + 1] !== '' && array[i + 1] !== undefined) {
+        str += ',';
+      }
+    }
+    return str;
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
     let url = 'https://api.magicthegathering.io/v1/cards';
@@ -55,14 +68,13 @@ class App extends Component {
         type: this.state.type,
         power: this.state.power,
         toughness: this.state.toughness,
-        types: this.state.types,
+        types: this.listArray(types),
         language: this.state.langugage,
-        color: color,
-        supertype: supertype,
+        colors: this.listArray(color),
+        supertypes: this.listArray(supertype),
         setName: this.state.setName,
         orderBy: this.state.orderBy,
-        types: types,
-        subtype: subtype,
+        subtypes: this.listArray(subtype),
         id: this.state.id,
         orderBy: this.state.orderBy
       }
